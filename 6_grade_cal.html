@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grade {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Your Grade: <span id="gradeId">-</span></p>
+
+    <script src="./function.js"></script>
+    <script>
+
+      // let score = prompt("Your scroe is : ");
+      // if (score >= 80) {
+      //   getElementById("gradeId", "A");
+      // } else if (score >= 70) {
+      //   getElementById("gradeId", "B");
+      // } else if (score >= 60) {
+      //   getElementById("gradeId", "C");
+      // } else if (score >= 50) {
+      //   getElementById("gradeId", "D");
+      // } else {
+      //   getElementById("gradeId", "F");
+      // }
+
+      // Refactor the code above
+      let score = prompt("Your scroe is : ");
+
+      if (!isNaN(score)) {
+        switch (true) {
+          case score >= 80:
+            grade = "A";
+            break;
+          case score >= 70:
+            grade = "B";
+            break;
+          case score >= 60:
+            grade = "C";
+            break;
+          case score >= 50:
+            grade = "D";
+            break;
+          default:
+            grade = "F";
+            break;
+        }
+        getElementById("gradeId", grade);
+        // window.setTimeout(() => {
+        //   window.location.reload();
+        // }, 5000);
+      } else {
+        alert("Please enter a number");
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>

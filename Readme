@@ -1,0 +1,31 @@
+this คือ คีย์เวิร์ดที่ใช้ในการอ้างถึงอ็อบเจกต์ปัจจุบัน 
+
+const person = {
+    name: "John",
+    getName: function() {
+        return this.name;
+    }
+};
+console.log(person.getName()); // "John"
+ในที่นี้ this จะอ้างถึง person ซึ่งเป็นอ็อบเจกต์ปัจจุบัน
+
+function Person(name) {
+    this.name = name;
+}
+const user = new Person("Alice");
+console.log(user.name); // "Alice"
+ในที่นี้ this อ้างถึง instance ใหม่ที่สร้างจาก new Person()
+
+const person = {
+    name: "John",
+    getName: () => {
+        return this.name;
+    }
+};
+console.log(person.getName()); // `undefined`
+ในที่นี้ this จะไม่ได้อ้างถึง person แต่จะอ้างถึง scope ที่ใกล้ที่สุด ซึ่งในที่นี้คือ global scope
+Arrow Function ไม่สร้าง this ของตัวเอง!
+✔ this ของ Arrow Function จะ อ้างถึง this ของ Parent Scope เสมอ
+
+
+ทำโปรแกรมทายหัวก้อย

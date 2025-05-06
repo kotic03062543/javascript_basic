@@ -1,0 +1,60 @@
+<!--  DOM เมื่อหน้าเว็บโหลดเสร็จ Web browser จะสร่าง DOM ของหน้าเว็บนั้นขึ้นมา
+ โดยมอง HTML เป็นโครงสร้างต้นไม้ (ก้อน object)
+ DOM คือตัวเชื่อมระหว่าง HTML CSS JS ให้ทำงานเข้าด้วยกันได้ -->
+
+<!--  คุณสมบัติของ HTML DOM
+ 1 เข้าถึงและเปลี่ยนคุณสมบัติทั้งหมดของ element บนหน้าเว็บได้
+ 2 ควมคุมการทำงานเปลี่ยนรูปแบบของ CSS ได้ -> เปลี่ยนสี เปลี่ยนพื้นหลัง
+ 3 ตอบสนองกับทุกเหตุการณ์ที่เกิดขึ้นบนหน้าเว็บได้ -> เขียน event popun ต่างๆ ได้ -->
+
+<!--  1 เข้าถึง element ผ่าน ID. Tag, Class -> document.getElementById(); ,document.getElementsByTagName();, document.getElementsByClassName(); -->
+
+<!-- เปลี่ยน DOM Document
+    1 เปลี่ยนเนื้อหา : element.innerHTML
+    2 เปลี่ยนเนื้อหา Text : element.innerText
+    3 เปลี่ยน style :  element.style.properties = value -> มี properties เพราะมันมองเป็น object
+    4 กำเนินการผ่าน method : element.Attribute(attribute, value)
+-->
+
+้<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p onclick="displayTag()">1</p>
+    <p onclick="displayId()" id="p-id">1</p>
+    <p onclick="displayClassName()" class="class_name">1</p>
+    <script>
+      // ถ้าใช้ querySelector id ใช้ # class ใช้ .
+
+      console.log("================ elementTagP ================");
+      let elementTagP = document.getElementsByTagName("p"); // เข้าถึง element อ้างอิงผ่านชื่อ tag
+      console.log("elementTagP", elementTagP);
+
+      console.log("================ elementId ================");
+      let elementId = document.getElementById("p-id"); // เข้าถึง element อ้างอิงผ่านชื่อ id
+      console.log("elementId", elementId);
+      function displayId() {
+        // elementId.innerText = "กด";
+        elementId.innerHTML = "<h2> กด </h2>";
+      }
+
+      console.log("================ elementClassName ================");
+      let elementClassName = document.getElementsByClassName("class_name");
+      console.log("elementClassName", elementClassName);
+      let elementClassNameQuerySelector = document.querySelector(".class_name");
+      let elementTagQuerySelector = document.querySelector("p");
+      console.log(
+        "elementClassNameQuerySelector",
+        elementClassNameQuerySelector
+      );
+      console.log("elementTagQuerySelector", elementTagQuerySelector);
+
+      let elementTagQuerySelectorAll = document.querySelectorAll("p");
+      console.log("elementTagQuerySelectorAll", elementTagQuerySelectorAll);
+    </script>
+  </body>
+</html>

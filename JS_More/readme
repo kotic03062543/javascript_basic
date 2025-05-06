@@ -1,0 +1,3 @@
+Javascript
+1. Internal -> ใส่ในไฟล์นั้นไปเลย เช่น ใน Head, body html
+2. External -> แยกไฟล์ JS ออกไปแล้ว include ใช้หน้าที่ต้องการ
